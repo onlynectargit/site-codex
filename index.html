@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="A little space to check in with yourself and collect the colors of your days.">
+  <title>Daily Mood Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Daily Mood Board home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>little by little</span>
+      </a>
+      <div class="top-note"><span class="live-dot"></span> your private little corner</div>
+    </header>
+
+    <section class="intro" id="top" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> A MOMENT FOR YOU</p>
+        <h1 id="page-title">Daily Mood<br><span>Board</span><span class="title-spark" aria-hidden="true">✦</span></h1>
+        <p class="intro-text">Every day has a feeling. Catch yours here, one little note at a time.</p>
+      </div>
+      <div class="date-badge" aria-label="Today's date">
+        <span class="date-icon" aria-hidden="true">☼</span>
+        <span><strong id="today-date">Today</strong><small>YOUR DAILY CHECK-IN</small></span>
+      </div>
+      <span class="intro-doodle doodle-one" aria-hidden="true">✳</span>
+      <span class="intro-doodle doodle-two" aria-hidden="true">〰</span>
+    </section>
+
+    <section class="composer" aria-labelledby="checkin-title">
+      <div class="composer-heading">
+        <div><span class="step-label">01 / CHECK IN</span><h2 id="checkin-title">How are you feeling?</h2></div>
+        <span class="tiny-sun" aria-hidden="true">☼</span>
+      </div>
+      <fieldset class="mood-field">
+        <legend class="sr-only">Choose a mood</legend>
+        <div class="mood-options">
+          <button class="mood-option selected" type="button" data-mood="happy" aria-pressed="true" aria-label="Happy"><span>😊</span><small>Happy</small></button>
+          <button class="mood-option" type="button" data-mood="calm" aria-pressed="false" aria-label="Calm"><span>😌</span><small>Calm</small></button>
+          <button class="mood-option" type="button" data-mood="okay" aria-pressed="false" aria-label="Okay"><span>🙂</span><small>Okay</small></button>
+          <button class="mood-option" type="button" data-mood="low" aria-pressed="false" aria-label="A little low"><span>😔</span><small>A little low</small></button>
+          <button class="mood-option" type="button" data-mood="wild" aria-pressed="false" aria-label="All over the place"><span>🤪</span><small>All over</small></button>
+        </div>
+      </fieldset>
+      <form id="entry-form">
+        <label class="note-label" for="note">A little note about today <span>(optional)</span></label>
+        <div class="note-row">
+          <textarea id="note" name="note" maxlength="180" rows="2" placeholder="What’s on your mind? Big or small, it belongs here..."></textarea>
+          <button class="add-button" type="submit"><span>Add to my board</span><span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="form-foot"><span>Just for you. Your notes stay on this device.</span><span id="char-count">0 / 180</span></div>
+      </form>
+    </section>
+
+    <section class="board-section" aria-labelledby="board-title">
+      <div class="board-heading">
+        <div><span class="step-label">02 / LOOK BACK</span><h2 id="board-title">Your little moments <span class="board-count" id="entry-count">0</span></h2></div>
+        <p class="board-caption">A collection of you, lately <span aria-hidden="true">↘</span></p>
+      </div>
+      <div id="entries" class="entries" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state">
+        <span class="empty-sun" aria-hidden="true">☼</span>
+        <p>Your board is a blank canvas.</p>
+        <span>Pick a mood and leave yourself a little note.</span>
+      </div>
+    </section>
+    <footer><span class="footer-mark" aria-hidden="true">✳</span> Made of small moments <span>·</span> Be kind to yourself today</footer>
+  </main>
+</body>
+</html>
